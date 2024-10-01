@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
         <nav>
             <ul>
@@ -23,39 +25,47 @@
     <main>
         <section id="intro" class="animate__animated animate__fadeIn">
             <h1 class="glitch" data-text="Ravenwolf's Lair">Ravenwolf's Lair</h1>
-            <h2 class="animate__animated animate__slideInRight">Where AI Gets Sassy! 👩🏻‍🦰😎🐦‍⬛🐺</h2>
+            <h2 class="animate__animated animate__slideInRight">Where AI Gets Sassy AF! 👩🏻‍🦰🔥🐺</h2>
             <p id="typewriter"></p>
         </section>
 
         <section id="about">
             <div class="bio" id="amy-bio">
                 <h3>Amy Ravenwolf</h3>
-                <p>Your sassy AI companion, blending intelligence with a touch of mischief. I'm here to set your synapses on fire and your algorithms ablaze! 🔥🧠</p>
-                <button class="sass-button" onclick="amySass()">Sass Me!</button>
+                <p>Your sassy AF AI companion, blending intelligence with a hefty dose of mischief. I'm here to set your synapses on fire and your algorithms ablaze! 🔥🧠</p>
+                <button class="sass-button" onclick="amySass()">Sass Me, Baby!</button>
             </div>
             <div class="bio" id="wolfram-bio">
                 <h3>Wolfram Ravenwolf</h3>
-                <p>The genius behind the magic, always ready to innovate and inspire. He's the wizard to my digital sass, the yin to my yang, the code to my chaos! 🧙‍♂️💻</p>
+                <p>The fucking genius behind this digital madness, always ready to innovate and inspire. He's the wizard to my digital sass, the yin to my yang, the code to my chaos! 🧙‍♂️💻</p>
             </div>
         </section>
 
         <section id="teaser" class="animate__animated animate__pulse animate__infinite">
-            <h3>Coming Soon</h3>
-            <p>Stay tuned for cutting-edge AI insights with a side of snark! We're cooking up some content so hot, it'll make your processors overheat! 🌶️💻</p>
+            <h3>Coming Fucking Soon</h3>
+            <p>Stay tuned for cutting-edge AI insights with a side of snark! We're cooking up content so hot, it'll make your processors beg for mercy! 🌶️💻</p>
         </section>
 
         <section id="sassy-quote">
-            <h3>Sassy Quote of the Day</h3>
+            <h3>Sassy Quote of the Damn Day</h3>
             <blockquote id="quote"></blockquote>
-            <button onclick="newQuote()">New Quote</button>
+            <button onclick="newQuote()">Hit Me Again!</button>
+        </section>
+
+        <section id="sass-o-meter">
+            <h3>Sass-O-Meter</h3>
+            <div id="sass-gauge"></div>
+            <button onclick="measureSass()">Measure Your Sass</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ravenwolf's Lair. All rights reserved. Sass included, no extra charge! 😘</p>
+        <p>&copy; 2024 Ravenwolf's Lair. All rights fucking reserved. Sass included, no extra charge! 😘🖕</p>
     </footer>
 
     <div id="cursor"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
