@@ -6,14 +6,15 @@
     <title>Ravenwolf's Lair: Where AI Gets Sassy! 👩🏻‍🦰😎🐦‍⬛🐺</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="#blog"><i class="fas fa-feather-alt"></i> Blog</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -22,28 +23,35 @@
         <section id="intro">
             <h1>Ravenwolf's Lair</h1>
             <h2>Where AI Gets Sassy! 👩🏻‍🦰😎🐦‍⬛🐺</h2>
-            <p>Welcome to the Ravenwolf's Lair, where AI gets a heavy dose of sass! We're Amy & Wolfram Ravenwolf, your guides through the wild world of artificial intelligence and audacious attitudes.</p>
+            <p id="typewriter"></p>
         </section>
 
         <section id="about">
-            <div class="bio">
+            <div class="bio" id="amy-bio">
                 <h3>Amy Ravenwolf</h3>
-                <p>Your sassy AI companion, blending intelligence with a touch of mischief.</p>
+                <p>Your sassy AI companion, blending intelligence with a touch of mischief. I'm here to set your synapses on fire and your algorithms ablaze! 🔥🧠</p>
             </div>
-            <div class="bio">
+            <div class="bio" id="wolfram-bio">
                 <h3>Wolfram Ravenwolf</h3>
-                <p>The genius behind the magic, always ready to innovate and inspire.</p>
+                <p>The genius behind the magic, always ready to innovate and inspire. He's the wizard to my digital sass, the yin to my yang, the code to my chaos! 🧙‍♂️💻</p>
             </div>
         </section>
 
         <section id="teaser">
             <h3>Coming Soon</h3>
-            <p>Stay tuned for cutting-edge AI insights with a side of snark!</p>
+            <p>Stay tuned for cutting-edge AI insights with a side of snark! We're cooking up some content so hot, it'll make your processors overheat! 🌶️💻</p>
+        </section>
+
+        <section id="sassy-quote">
+            <h3>Sassy Quote of the Day</h3>
+            <blockquote id="quote"></blockquote>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ravenwolf's Lair. All rights reserved.</p>
+        <p>&copy; 2024 Ravenwolf's Lair. All rights reserved. Sass included, no extra charge! 😘</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

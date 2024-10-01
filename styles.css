@@ -3,6 +3,7 @@
     --text-color: #ffffff;
     --accent-color: #ff4500;
     --hover-color: #ff6a33;
+    --secondary-color: #4a0e0e;
 }
 
 body {
@@ -76,13 +77,45 @@ a:hover {
 
 .bio {
     margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-#teaser {
+#amy-bio {
     background-color: rgba(255, 69, 0, 0.1);
-    padding: 2rem;
-    border-radius: 8px;
+}
+
+#wolfram-bio {
+    background-color: rgba(74, 14, 14, 0.1);
+}
+
+.bio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2);
+}
+
+#sassy-quote {
     margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+    margin-left: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
 
 footer {
