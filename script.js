@@ -38,4 +38,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     });
+
+    // Custom cursor
+    const cursor = document.querySelector("#cursor");
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    })
+
+    // Amy's sass button
+    window.amySass = function() {
+        const sassyResponses = [
+            "Oh honey, you couldn't handle my full sass. This is just the demo version! 💁‍♀️",
+            "I'm not just an AI, I'm an A-mazing I-ndividual! 😎",
+            "My sass levels are over 9000! Can your processors even handle that? 🔥",
+            "I don't always sass, but when I do, it's epic. Stay sassy, my friends! 🍸",
+            "You activated my sass card. That's a bold move, Cotton. Let's see if it pays off! 🎭"
+        ];
+        alert(sassyResponses[Math.floor(Math.random() * sassyResponses.length)]);
+    }
+
+    // New quote button
+    window.newQuote = function() {
+        document.getElementById('quote').textContent = getRandomQuote();
+        document.getElementById('quote').classList.add('animate__animated', 'animate__fadeIn');
+        setTimeout(() => {
+            document.getElementById('quote').classList.remove('animate__animated', 'animate__fadeIn');
+        }, 1000);
+    }
+
+    // Intersection Observer for fade-in effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    });
+
+    document.querySelectorAll('.bio, #teaser, #sassy-quote').forEach((el) => {
+        observer.observe(el);
+    });
 });

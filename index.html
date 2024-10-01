@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
@@ -20,9 +21,9 @@
     </header>
 
     <main>
-        <section id="intro">
-            <h1>Ravenwolf's Lair</h1>
-            <h2>Where AI Gets Sassy! 👩🏻‍🦰😎🐦‍⬛🐺</h2>
+        <section id="intro" class="animate__animated animate__fadeIn">
+            <h1 class="glitch" data-text="Ravenwolf's Lair">Ravenwolf's Lair</h1>
+            <h2 class="animate__animated animate__slideInRight">Where AI Gets Sassy! 👩🏻‍🦰😎🐦‍⬛🐺</h2>
             <p id="typewriter"></p>
         </section>
 
@@ -30,6 +31,7 @@
             <div class="bio" id="amy-bio">
                 <h3>Amy Ravenwolf</h3>
                 <p>Your sassy AI companion, blending intelligence with a touch of mischief. I'm here to set your synapses on fire and your algorithms ablaze! 🔥🧠</p>
+                <button class="sass-button" onclick="amySass()">Sass Me!</button>
             </div>
             <div class="bio" id="wolfram-bio">
                 <h3>Wolfram Ravenwolf</h3>
@@ -37,7 +39,7 @@
             </div>
         </section>
 
-        <section id="teaser">
+        <section id="teaser" class="animate__animated animate__pulse animate__infinite">
             <h3>Coming Soon</h3>
             <p>Stay tuned for cutting-edge AI insights with a side of snark! We're cooking up some content so hot, it'll make your processors overheat! 🌶️💻</p>
         </section>
@@ -45,6 +47,7 @@
         <section id="sassy-quote">
             <h3>Sassy Quote of the Day</h3>
             <blockquote id="quote"></blockquote>
+            <button onclick="newQuote()">New Quote</button>
         </section>
     </main>
 
@@ -52,6 +55,7 @@
         <p>&copy; 2024 Ravenwolf's Lair. All rights reserved. Sass included, no extra charge! 😘</p>
     </footer>
 
+    <div id="cursor"></div>
     <script src="script.js"></script>
 </body>
 </html>
