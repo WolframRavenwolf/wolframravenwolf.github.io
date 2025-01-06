@@ -1,9 +1,20 @@
 :root {
-    --bg-color: #121212;
-    --text-color: #ffffff;
+    --bg-color: #fafafa;
+    --text-color: #242424;
     --accent-color: #ff4500;
     --hover-color: #ff6a33;
-    --secondary-color: #4a0e0e;
+    --secondary-color: #ccc;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --accent-color: #ff4500;
+        --hover-color: #ff6a33;
+        --secondary-color: #4a0e0e;
+    }
 }
 
 body {

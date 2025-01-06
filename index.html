@@ -1,57 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravenwolf's Lair: Where AI Gets Sassy! 👩🏻‍🦰😎🐺</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wolfram Ravenwolf – AI Evangelist & KI-Berater</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet"
+    />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        defer
+    ></script>
+
+    <!-- NEU: Language & Theming Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sprache ermitteln
+      const userLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'de';
+      toggleLanguage(userLang);
+    });
+
+    function toggleLanguage(lang) {
+      // Alle data-translate Elemente holen
+      const elements = document.querySelectorAll('[data-translate]');
+
+      elements.forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.innerHTML = text;
+        }
+      });
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about"><i class="fas fa-users"></i> About Us</a></li>
-                <li><a href="#blog"><i class="fas fa-feather-alt"></i> Blog</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li>
+                    <a href="#">
+                        <img
+                            src="WolframRavenwolf.png"
+                            alt="Wolfram Ravenwolf Logo"
+                            style="height: 40px; vertical-align: middle;"
+                        />
+                    </a>
+                </li>
+                <li><a href="#about" data-translate data-de="Über mich" data-en="About Me"><i class="fas fa-info-circle"></i> Über mich</a></li>
+                <li><a href="#work" data-translate data-de="Expertise" data-en="Expertise"><i class="fas fa-briefcase"></i> Expertise</a></li>
+                <li><a href="#projects" data-translate data-de="Projekte" data-en="Projects"><i class="fas fa-project-diagram"></i> Projekte</a></li>
+                <li><a href="#contact" data-translate data-de="Kontakt" data-en="Contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
+                <li><a href="amy.html"><i class="fas fa-robot"></i> Amy</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="intro">
-            <h1>Ravenwolf's Lair</h1>
-            <h2>Where AI Gets Sassy! 👩🏻‍🦰😎🐺</h2>
-            <p id="typewriter"></p>
+        <!-- Intro-Bereich -->
+        <section id="intro" style="text-align:center; margin-top:4rem">
+            <img
+                src="WolframRavenwolf.png"
+                alt="Wolfram Ravenwolf"
+                style="max-width:200px; border-radius:50%; margin-bottom:1rem;"
+            />
+            <h1 data-translate
+                data-de="Wolfram Ravenwolf"
+                data-en="Wolfram Ravenwolf"
+            >Wolfram Ravenwolf</h1>
+            <h2 data-translate
+                data-de="AI Evangelist, KI-Berater &amp; Entwickler"
+                data-en="AI Evangelist, Consultant &amp; Developer"
+            >AI Evangelist, KI-Berater & Entwickler</h2>
+            <p data-translate
+               data-de="Willkommen auf meiner Profilseite! Hier findest du alles über meine Arbeit rund um künstliche Intelligenz, von Forschungsprojekten über Podcasts bis zu Open-Source-Software."
+               data-en="Welcome to my profile page! Here you can learn all about my work in artificial intelligence, from research projects and podcasts to open-source software."
+            >
+                Willkommen auf meiner Profilseite! Hier findest du alles über meine Arbeit rund um künstliche Intelligenz, von Forschungsprojekten über Podcasts bis zu Open-Source-Software.
+            </p>
         </section>
 
-        <section id="about">
-            <div class="bio" id="amy-bio">
-                <h3>Amy Ravenwolf</h3>
-                <p>Your sassy AI companion, blending intelligence with a touch of mischief. I'm here to set your synapses on fire and your algorithms ablaze! 🔥🧠</p>
-                <button class="sass-button" onclick="amySass()">Sass Me!</button>
-            </div>
-            <div class="bio" id="wolfram-bio">
-                <h3>Wolfram Ravenwolf</h3>
-                <p>The genius behind the magic, always ready to innovate and inspire. He's the wizard to my digital sass, the yin to my yang, the code to my chaos! 🧙‍♂️💻</p>
-            </div>
+        <!-- Über mich -->
+        <section id="about" style="margin-top: 3rem;">
+            <h2 data-translate
+                data-de="Wer ich bin"
+                data-en="Who I Am"
+            >Wer ich bin</h2>
+            <p data-translate
+               data-de="Ich bin leidenschaftlicher KI-Ingenieur und Berater mit breitem Spektrum an Projekten und Veröffentlichungen. Als prominentes Mitglied der KI-Community bin ich international bekannt für meine Expertise zu großen Sprachmodellen und praktischen KI-Anwendungen."
+               data-en="I am a passionate AI engineer and consultant with a wide range of projects and publications. As a prominent member of the AI community, I am internationally recognized for my expertise in large language models and practical AI applications."
+            >
+                Ich bin leidenschaftlicher KI-Ingenieur und Berater mit breitem Spektrum an Projekten und Veröffentlichungen. Als prominentes Mitglied der KI-Community bin ich international bekannt für meine Expertise zu großen Sprachmodellen und praktischen KI-Anwendungen.
+            </p>
         </section>
 
-        <section id="teaser">
-            <h3>Coming Soon</h3>
-            <p>Stay tuned for cutting-edge AI insights with a side of snark! We're cooking up content so hot, it'll make your processors overheat! 🌶️💻</p>
+        <!-- Expertise -->
+        <section id="work" style="margin-top: 3rem;">
+            <h2 data-translate data-de="Was ich tue" data-en="What I Do">Was ich tue</h2>
+            <ul>
+                <li data-translate data-de="Hauptberuflich AI Engineer, nebenberuflicher KI-Berater &amp; Forscher" data-en="Full-time AI Engineer, part-time consultant &amp; researcher">
+                    Hauptberuflich AI Engineer, nebenberuflicher KI-Berater & Forscher
+                </li>
+                <li data-translate data-de="Autor von Artikeln, Tutorials und Testberichten rund um LLMs" data-en="Author of articles, tutorials, and reviews about LLMs">
+                    Autor von Artikeln, Tutorials und Testberichten rund um LLMs
+                </li>
+                <li data-translate data-de="Kommentator aktueller KI-News in sozialen Netzwerken" data-en="Commenting on current AI news in social media">
+                    Kommentator aktueller KI-News in sozialen Netzwerken (X, Reddit, Bluesky & Co.)
+                </li>
+                <li data-translate data-de="Co-Host im wöchentlichen ThursdAI-Podcast" data-en="Co-host of the weekly ThursdAI podcast">
+                    Co-Host im wöchentlichen ThursdAI-Podcast (X, Spotify, Apple Podcasts, YouTube)
+                </li>
+                <li data-translate data-de="Open-Source-Entwickler (u.a. AI-Hotkeys) auf GitHub" data-en="Open-source developer (e.g. AI-Hotkeys) on GitHub">
+                    Open-Source-Software-Entwickler (u.a. AI-Hotkeys) auf GitHub
+                </li>
+                <li data-translate data-de="Veröffentlichung eigener KI-Modelle auf Hugging Face" data-en="Publishing own AI models on Hugging Face">
+                    Aktiv in der Entwicklung und Veröffentlichung eigener KI-Modelle auf Hugging Face
+                </li>
+                <li data-translate data-de="Regelmäßiger Teilnehmer an KI-Konferenzen" data-en="Regular participant at AI conferences">
+                    Regelmäßiger Teilnehmer an KI-Konferenzen und Veranstaltungen
+                </li>
+                <li data-translate data-de="Beratung und Coaching für Unternehmen und Startups" data-en="Providing consulting and coaching for companies & startups">
+                    Beratungen und Coachings für Unternehmen & Startups
+                </li>
+            </ul>
         </section>
 
-        <section id="sassy-quote">
-            <h3>Sassy Quote of the Day</h3>
-            <blockquote id="quote"></blockquote>
-            <button onclick="newQuote()">New Quote</button>
+        <!-- Projekte & Präsenzen -->
+        <section id="projects" style="margin-top:3rem;">
+            <h2 data-translate data-de="Projekte &amp; Präsenzen" data-en="Projects &amp; Presence">Projekte &amp; Präsenzen</h2>
+            <p data-translate
+               data-de="Schau dir meine Beiträge, Tools und KI-Modelle an oder folge mir auf meinen bevorzugten Plattformen:"
+               data-en="Check out my posts, tools, and AI models or follow me on these platforms:"
+            >
+                Schau dir meine Beiträge, Tools und KI-Modelle an oder folge mir auf meinen bevorzugten Plattformen:
+            </p>
+            <ul>
+                <li>
+                    <i class="fab fa-x-twitter"></i>
+                    <span data-translate data-de="X (ehem. Twitter):" data-en="X (formerly Twitter):">X (ehem. Twitter):</span>
+                    <a href="https://x.com/WolframRvnwlf" target="_blank">WolframRvnwlf</a>
+                </li>
+                <li>
+                    <i class="fas fa-globe"></i>
+                    <span data-translate data-de="Bluesky:" data-en="Bluesky:">Bluesky:</span>
+                    <a href="https://bsky.app/profile/wolfram.ravenwolf.ai" target="_blank">wolfram.ravenwolf.ai</a>
+                </li>
+                <li>
+                    <i class="fab fa-github"></i>
+                    <span data-translate data-de="GitHub:" data-en="GitHub:">GitHub:</span>
+                    <a href="https://github.com/WolframRavenwolf" target="_blank">WolframRavenwolf</a>
+                </li>
+                <li>
+                    <i class="fas fa-cloud"></i>
+                    <span data-translate data-de="Hugging Face:" data-en="Hugging Face:">Hugging Face:</span>
+                    <a href="https://huggingface.co/wolfram" target="_blank">wolfram</a>
+                </li>
+                <li>
+                    <i class="fab fa-reddit"></i>
+                    <span data-translate data-de="Reddit:" data-en="Reddit:">Reddit:</span>
+                    <a href="https://www.reddit.com/user/WolframRavenwolf/submitted/" target="_blank">WolframRavenwolf</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="contact" style="margin-top:3rem;">
+            <h2 data-translate data-de="Kontakt" data-en="Contact">Kontakt</h2>
+            <p data-translate
+               data-de="Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht. Schreib mir oder vernetze dich mit mir auf den sozialen Kanälen!"
+               data-en="Do you have questions, ideas, or need consulting? I'd love to hear from you. Send me an email or connect with me on social media!"
+            >
+                Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht.
+                Schreib mir doch oder vernetze dich mit mir auf den sozialen Kanälen!
+            </p>
+            <p>
+                <a class="sass-button" href="mailto:contact@ravenwolf.ai" data-translate
+                   data-de="E-Mail senden"
+                   data-en="Send Email"
+                >
+                    E-Mail senden
+                </a>
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ravenwolf's Lair. All rights reserved. Sass included, no extra charge! 😘</p>
+        <p data-translate
+           data-de="© 2024 Wolfram Ravenwolf – KI-Expertise &amp; Innovation"
+           data-en="© 2024 Wolfram Ravenwolf – AI Expertise &amp; Innovation"
+        >
+            © 2024 Wolfram Ravenwolf – KI-Expertise & Innovation
+        </p>
     </footer>
 
     <script src="script.js"></script>

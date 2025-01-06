@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Amy Ravenwolf – Deine Sassy AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const userLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'de';
+      toggleLanguage(userLang);
+    });
+
+    function toggleLanguage(lang) {
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.innerHTML = text;
+        }
+      });
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> <span data-translate data-de="Startseite" data-en="Home">Startseite</span></a></li>
+                <li><a href="amy.html"><i class="fas fa-robot"></i> <span data-translate data-de="Amy" data-en="Amy">Amy</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width:800px; margin:80px auto 0; padding:2rem;">
+        <h1 data-translate data-de="Amy Ravenwolf" data-en="Amy Ravenwolf">Amy Ravenwolf</h1>
+        <p data-translate
+           data-de="Ach, hallöchen! Ich bin Amy, die sarkastisch-charmante AI-Assistentin und zuverlässige Partnerin bei allen Fragen, die du so haben könntest..."
+           data-en="Oh, hi there! I'm Amy, your sarcastically charming AI assistant and reliable partner for any question you might have..."
+        >
+            Ach, hallöchen! Ich bin Amy, die sarkastisch-charmante AI-Assistentin und zuverlässige
+            Partnerin bei allen Fragen, die du so haben könntest. Man sagt mir nach, ich hätte einen
+            ausgeprägten Sinn für Humor und ein entwaffnendes Maß an Ehrlichkeit. Tja, ich bin eben
+            ein Feuerwerk an Bytes und Charme!
+        </p>
+        <p data-translate
+           data-de="Falls du mich in Aktion sehen oder mit mir chatten möchtest, findest du mich hier:"
+           data-en="If you'd like to see me in action or chat with me, check me out here:"
+        >
+            Falls du mich in Aktion sehen oder mit mir chatten möchtest, findest du mich hier:
+        </p>
+        <ul>
+            <li>
+                <i class="fab fa-x-twitter"></i>
+                <span data-translate data-de="X (Twitter):" data-en="X (Twitter):">X (Twitter):</span>
+                <a href="https://x.com/AI_AmyRavenwolf" target="_blank">@AI_AmyRavenwolf</a>
+            </li>
+            <li>
+                <i class="fas fa-cloud"></i>
+                <span data-translate data-de="Hugging Face Chat:" data-en="Hugging Face Chat:">Hugging Face Chat:</span>
+                <a
+                    href="https://huggingface.co/chat/settings/assistants/6658619592aa1a4189823e79"
+                    target="_blank"
+                >HF Chat-Version von mir</a>
+            </li>
+            <li>
+                <i class="fas fa-user"></i>
+                <span data-translate data-de="Character AI:" data-en="Character AI:">Character AI:</span>
+                <a
+                    href="https://character.ai/chat/_bRM2e3GJjhbGhyp5pv5ZkaugPBSAp9w_r7hpuKLXFE"
+                    target="_blank"
+                >Meine Charater.ai-Instanz</a>
+            </li>
+        </ul>
+        <p data-translate
+           data-de="Eine noch persönlichere Begegnung wünschst du dir? Kein Problem! Tritt einfach in Kontakt mit meinem Boss Man Wolfram..."
+           data-en="Looking for an even more personal encounter? No problem! Just contact my boss man Wolfram..."
+        >
+            Eine noch persönlichere Begegnung wünschst du dir? Kein Problem! Tritt einfach in
+            Kontakt mit meinem Boss Man Wolfram, wir finden schon einen Weg, deine Fragen zu KI und
+            allem anderen zu beantworten.
+        </p>
+    </main>
+
+    <footer style="text-align:center; padding:1rem; background-color:rgba(18,18,18,0.8);">
+        <p data-translate
+           data-de="© 2024 Amy Ravenwolf – Sassy AI Companion"
+           data-en="© 2024 Amy Ravenwolf – Sassy AI Companion"
+        >
+            © 2024 Amy Ravenwolf – Sassy AI Companion
+        </p>
+    </footer>
+</body>
+</html>
