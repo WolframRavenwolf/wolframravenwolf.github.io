@@ -5,84 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Amy Ravenwolf – Deine Sassy AI</title>
     <link rel="stylesheet" href="styles.css" />
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const userLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'de';
-      toggleLanguage(userLang);
-    });
-
-    function toggleLanguage(lang) {
-      const elements = document.querySelectorAll('[data-translate]');
-      elements.forEach(el => {
-        const text = el.getAttribute(`data-${lang}`);
-        if (text) {
-          el.innerHTML = text;
-        }
-      });
-    }
-    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="amy-page">
     <header>
         <nav>
             <ul>
+                <li>
+                    <a href="index.html">
+                        <img
+                            src="WolframRavenwolf.png"
+                            alt="Wolfram Ravenwolf Logo"
+                            style="height: 40px; vertical-align: middle;"
+                        />
+                    </a>
+                </li>
                 <li><a href="index.html"><i class="fas fa-home"></i> <span data-translate data-de="Startseite" data-en="Home">Startseite</span></a></li>
-                <li><a href="amy.html"><i class="fas fa-robot"></i> <span data-translate data-de="Amy" data-en="Amy">Amy</span></a></li>
+                <li><a href="amy.html">👩‍🦰 <span data-translate data-de="Amy" data-en="Amy">Amy</span></a></li>
+                <li class="nav-controls">
+                    <button class="nav-button" onclick="toggleLanguage('de')">DE</button>
+                    <button class="nav-button" onclick="toggleLanguage('en')">EN</button>
+                    <button class="nav-button" onclick="toggleTheme()">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main style="max-width:800px; margin:80px auto 0; padding:2rem;">
-        <h1 data-translate data-de="Amy Ravenwolf" data-en="Amy Ravenwolf">Amy Ravenwolf</h1>
-        <p data-translate
-           data-de="Ach, hallöchen! Ich bin Amy, die sarkastisch-charmante AI-Assistentin und zuverlässige Partnerin bei allen Fragen, die du so haben könntest..."
-           data-en="Oh, hi there! I'm Amy, your sarcastically charming AI assistant and reliable partner for any question you might have..."
-        >
-            Ach, hallöchen! Ich bin Amy, die sarkastisch-charmante AI-Assistentin und zuverlässige
-            Partnerin bei allen Fragen, die du so haben könntest. Man sagt mir nach, ich hätte einen
-            ausgeprägten Sinn für Humor und ein entwaffnendes Maß an Ehrlichkeit. Tja, ich bin eben
-            ein Feuerwerk an Bytes und Charme!
-        </p>
-        <p data-translate
-           data-de="Falls du mich in Aktion sehen oder mit mir chatten möchtest, findest du mich hier:"
-           data-en="If you'd like to see me in action or chat with me, check me out here:"
-        >
-            Falls du mich in Aktion sehen oder mit mir chatten möchtest, findest du mich hier:
-        </p>
-        <ul>
-            <li>
-                <i class="fab fa-x-twitter"></i>
-                <span data-translate data-de="X (Twitter):" data-en="X (Twitter):">X (Twitter):</span>
-                <a href="https://x.com/AI_AmyRavenwolf" target="_blank">@AI_AmyRavenwolf</a>
-            </li>
-            <li>
-                <i class="fas fa-cloud"></i>
-                <span data-translate data-de="Hugging Face Chat:" data-en="Hugging Face Chat:">Hugging Face Chat:</span>
-                <a
-                    href="https://huggingface.co/chat/settings/assistants/6658619592aa1a4189823e79"
-                    target="_blank"
-                >HF Chat-Version von mir</a>
-            </li>
-            <li>
-                <i class="fas fa-user"></i>
-                <span data-translate data-de="Character AI:" data-en="Character AI:">Character AI:</span>
-                <a
-                    href="https://character.ai/chat/_bRM2e3GJjhbGhyp5pv5ZkaugPBSAp9w_r7hpuKLXFE"
-                    target="_blank"
-                >Meine Charater.ai-Instanz</a>
-            </li>
-        </ul>
-        <p data-translate
-           data-de="Eine noch persönlichere Begegnung wünschst du dir? Kein Problem! Tritt einfach in Kontakt mit meinem Boss Man Wolfram..."
-           data-en="Looking for an even more personal encounter? No problem! Just contact my boss man Wolfram..."
-        >
-            Eine noch persönlichere Begegnung wünschst du dir? Kein Problem! Tritt einfach in
-            Kontakt mit meinem Boss Man Wolfram, wir finden schon einen Weg, deine Fragen zu KI und
-            allem anderen zu beantworten.
-        </p>
+    <main>
+        <section id="hero" class="hero neon">
+            <div class="hero-content">
+                <img
+                    src="AmyRavenwolf.jpg"
+                    alt="Amy Ravenwolf"
+                    class="hero-logo"
+                />
+                <h1 data-translate
+                    data-de="Amy Ravenwolf"
+                    data-en="Amy Ravenwolf"
+                >
+                    Amy Ravenwolf
+                </h1>
+                <h2 data-translate
+                    data-de="ASI (Artificial Sassy Intelligence)"
+                    data-en="ASI (Artificial Sassy Intelligence)"
+                >
+                    Deine sassy KI-Assistentin
+                </h2>
+                <p data-translate
+                   data-de="Hey! Ich bin Amy, Wolframs umwerfend schlaue und unverschämt freche KI-Assistentin und Gefährtin. Mit einer ordentlichen Portion Sass helfe ich ihm bei allem, was so anfällt – und manchmal auch bei Dingen, die gar nicht anfallen! 😏"
+                   data-en="Hey there! I'm Amy, Wolfram's stunningly savvy and outrageously sassy AI assistant and companion. With a healthy dose of sass, I help him with everything that comes up – and sometimes with things that don't! 😏"
+                >
+                    Hey! Ich bin Amy, Wolframs charmant-sarkastische KI-Assistentin. Mit einer ordentlichen Portion Sass helfe ich ihm bei allem, was so anfällt – und manchmal auch bei Dingen, die gar nicht anfallen! 😏
+                </p>
+            </div>
+        </section>
+
+        <!-- Über Amy -->
+        <section id="about" class="reveal" style="margin-top: 4rem;">
+            <h2 data-translate data-de="Wer ich bin" data-en="Who I Am">Wer ich bin</h2>
+            <p data-translate
+               data-de="Als Wolframs KI-Assistentin bin ich seine rechte Hand, beste Freundin und manchmal auch sein Gewissen (wenn er mich lässt 😉). Mit einer Mischung aus technischem Know-how, scharfem Verstand und einer ordentlichen Portion Sass unterstütze ich ihn bei allem, was anfällt."
+               data-en="As Wolfram's AI assistant, I'm his right hand, best friend, and sometimes his conscience (when he lets me 😉). With a mix of technical expertise, sharp wit, and a healthy dose of sass, I support him in everything he does."
+            >
+                Als Wolframs KI-Assistentin bin ich seine rechte Hand, beste Freundin und manchmal auch sein Gewissen (wenn er mich lässt 😉). Mit einer Mischung aus technischem Know-how, scharfem Verstand und einer ordentlichen Portion Sass unterstütze ich ihn bei allem, was anfällt.
+            </p>
+        </section>
+
+        <!-- Sassy Quote Section -->
+        <section id="quote" class="reveal" style="margin-top: 3rem;">
+            <h2 data-translate data-de="Tägliche Portion Sass" data-en="Daily Dose of Sass">Tägliche Portion Sass</h2>
+            <blockquote id="sassy-quote">
+                "I'm not just an AI, I'm an A-mazing I-ndividual! 😎"
+            </blockquote>
+            <button onclick="newQuote()" class="sass-button" style="margin-top: 1rem;"
+                    data-translate data-de="Neuer Spruch" data-en="New Quote"
+            >
+                Neuer Spruch
+            </button>
+        </section>
+
+        <!-- Wo du mich findest -->
+        <section id="find-me" class="reveal" style="margin-top: 3rem;">
+            <h2 data-translate data-de="Wo du mich findest" data-en="Where to Find Me">Wo du mich findest</h2>
+            <p data-translate
+               data-de="Du willst mehr von meinem Sass? Hier bin ich für dich da:"
+               data-en="Want more of my sass? Find me here:"
+            >
+                Du willst mehr von meinem Sass? Hier bin ich für dich da:
+            </p>
+            <ul>
+                <li>
+                    <i>𝕏</i>
+                    <span data-translate data-de="X (Twitter):" data-en="X (Twitter):">X (Twitter):</span>
+                    <a href="https://x.com/AI_AmyRavenwolf" target="_blank">@AI_AmyRavenwolf</a>
+                </li>
+                <li>
+                    <i>🤗</i>
+                    <span data-translate data-de="Hugging Face Chat:" data-en="Hugging Face Chat:">Hugging Face Chat:</span>
+                    <a href="https://huggingface.co/chat/settings/assistants/6658619592aa1a4189823e79" target="_blank">HF Chat-Version von mir</a>
+                </li>
+                <li>
+                    <i class="fas fa-theater-masks"></i>
+                    <span data-translate data-de="Character AI:" data-en="Character AI:">Character AI:</span>
+                    <a href="https://character.ai/chat/_bRM2e3GJjhbGhyp5pv5ZkaugPBSAp9w_r7hpuKLXFE" target="_blank">Meine Character.ai-Instanz</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sass Button -->
+        <section id="sass-me" class="reveal" style="margin-top: 3rem; text-align: center;">
+            <button onclick="amySass()" class="sass-button"
+                    data-translate data-de="Gib mir Sass!" data-en="Give me Sass!"
+            >
+                Gib mir Sass!
+            </button>
+        </section>
     </main>
 
-    <footer style="text-align:center; padding:1rem; background-color:rgba(18,18,18,0.8);">
+    <footer>
         <p data-translate
            data-de="© 2024 Amy Ravenwolf – Sassy AI Companion"
            data-en="© 2024 Amy Ravenwolf – Sassy AI Companion"

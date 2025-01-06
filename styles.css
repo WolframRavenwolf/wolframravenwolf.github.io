@@ -1,4 +1,5 @@
 :root {
+    /* Standard: Light */
     --bg-color: #fafafa;
     --text-color: #242424;
     --accent-color: #ff4500;
@@ -6,7 +7,7 @@
     --secondary-color: #ccc;
 }
 
-/* Dark Mode */
+/* Falls System Dark gemeldet hat */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #121212;
@@ -17,6 +18,25 @@
     }
 }
 
+/* Explizit erzwungener Dark Mode */
+:root[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #ff4500;
+    --hover-color: #ff6a33;
+    --secondary-color: #4a0e0e;
+}
+
+/* Explizit erzwungener Light Mode */
+:root[data-theme="light"] {
+    --bg-color: #fafafa;
+    --text-color: #242424;
+    --accent-color: #ff4500;
+    --hover-color: #ff6a33;
+    --secondary-color: #ccc;
+}
+
+/* Dann dein restliches CSS (body, .hero, .neon, ...) */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
@@ -39,6 +59,9 @@ nav ul {
     justify-content: flex-end;
     list-style-type: none;
     padding: 1rem;
+    align-items: center;
+    margin: 0;
+    font-size: 1.05rem;
 }
 
 nav ul li {
@@ -50,6 +73,19 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+}
+
+nav ul li a i {
+    font-size: inherit;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
 }
 
 nav ul li a:hover {
@@ -60,6 +96,7 @@ main {
     max-width: 800px;
     margin: 80px auto 0;
     padding: 2rem;
+    min-height: calc(100vh - 180px);
 }
 
 h1, h2, h3 {
@@ -139,9 +176,8 @@ footer {
     text-align: center;
     padding: 1rem;
     background-color: rgba(18, 18, 18, 0.8);
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: 2rem;
 }
 
 @media (max-width: 600px) {
@@ -161,4 +197,283 @@ footer {
     h2 {
         font-size: 1.2rem;
     }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 69, 0, 0.8),
+        rgba(255, 106, 51, 0.8)
+    );
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin: 0 -2rem;
+}
+
+.hero-content {
+    max-width: 700px;
+    text-align: center;
+}
+
+.hero-logo {
+    max-width: 160px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.hero h2 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.hero-cta {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+/* FÜGT EIN ANIMIERTES NEON-BACKGROUND FÜR DIE HERO-SEKTION HINZU */
+.neon {
+    /* Wir benutzen ein animiertes Gradient-Overlay */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 69, 0, 0.8) 0%,
+        rgba(255, 106, 51, 0.8) 25%,
+        rgba(255, 69, 153, 0.8) 50%,
+        rgba(106, 51, 255, 0.8) 75%,
+        rgba(255, 69, 0, 0.8) 100%
+    );
+    background-size: 600% 600%;
+    animation: neonGradient 10s ease infinite;
+    margin: 0 -2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* Keyframes für die schicke Farbverlauf-Animation */
+@keyframes neonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Leichtes Glas-/Transparenzgefühl beim hero-content */
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.hero-content:hover {
+    transform: scale(1.01);
+}
+
+/* Für die hero-cta (Sass-Button) ein wenig Neon-Schimmer */
+.hero-cta {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-cta::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-cta:hover::before {
+    opacity: 0.5;
+    animation: buttonGlow 1s infinite alternate;
+}
+
+/* Button-Glow-Animation */
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 6px rgba(255,255,255,0.4);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+}
+
+/* Neue Styles für die Nav-Buttons */
+.nav-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.nav-button {
+    background: rgba(255, 69, 0, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: inherit;
+}
+
+.nav-button:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+}
+
+.nav-button.active {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Verbesserte Listen */
+#work ul {
+    list-style: none;
+    padding: 0;
+}
+
+#work li {
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 69, 0, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#work li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 69, 0, 0.1);
+}
+
+#work li::before {
+    content: "→  ";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* Verbesserte Social Links */
+#projects ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+#projects li {
+    padding: 0;
+    background: rgba(255, 69, 0, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#projects li a {
+    display: block;
+    padding: 1rem;
+}
+
+/* Plattform-Name in normaler Textfarbe */
+#projects li a span {
+    color: var(--text-color);
+}
+
+/* Username in Akzentfarbe */
+#projects li a span + br + text {
+    display: inline-block;
+    color: var(--accent-color);
+}
+
+#projects li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 69, 0, 0.1);
+}
+
+#projects li i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typografie-Verbesserungen */
+h1, h2, h3 {
+    letter-spacing: -0.5px;
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Smooth Scroll für die ganze Seite */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Spezifische Größe für Amy-Seite */
+body[class="amy-page"] nav ul {
+    font-size: 1rem;
+}
+
+#projects li .username {
+    color: var(--accent-color);
 }

@@ -13,27 +13,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         defer
     ></script>
-
-    <!-- NEU: Language & Theming Script -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Sprache ermitteln
-      const userLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'de';
-      toggleLanguage(userLang);
-    });
-
-    function toggleLanguage(lang) {
-      // Alle data-translate Elemente holen
-      const elements = document.querySelectorAll('[data-translate]');
-
-      elements.forEach(el => {
-        const text = el.getAttribute(`data-${lang}`);
-        if (text) {
-          el.innerHTML = text;
-        }
-      });
-    }
-    </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -52,82 +32,139 @@
                 <li><a href="#work" data-translate data-de="Expertise" data-en="Expertise"><i class="fas fa-briefcase"></i> Expertise</a></li>
                 <li><a href="#projects" data-translate data-de="Projekte" data-en="Projects"><i class="fas fa-project-diagram"></i> Projekte</a></li>
                 <li><a href="#contact" data-translate data-de="Kontakt" data-en="Contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
-                <li><a href="amy.html"><i class="fas fa-robot"></i> Amy</a></li>
+                <li><a href="amy.html">👩‍🦰 Amy</a></li>
+
+                <!-- NEU: Sprachen & Theme-Umschalter -->
+                <li class="nav-controls">
+                    <button class="nav-button" onclick="toggleLanguage('de')">DE</button>
+                    <button class="nav-button" onclick="toggleLanguage('en')">EN</button>
+                    <button class="nav-button" onclick="toggleTheme()">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Intro-Bereich -->
-        <section id="intro" style="text-align:center; margin-top:4rem">
-            <img
-                src="WolframRavenwolf.png"
-                alt="Wolfram Ravenwolf"
-                style="max-width:200px; border-radius:50%; margin-bottom:1rem;"
-            />
-            <h1 data-translate
-                data-de="Wolfram Ravenwolf"
-                data-en="Wolfram Ravenwolf"
-            >Wolfram Ravenwolf</h1>
-            <h2 data-translate
-                data-de="AI Evangelist, KI-Berater &amp; Entwickler"
-                data-en="AI Evangelist, Consultant &amp; Developer"
-            >AI Evangelist, KI-Berater & Entwickler</h2>
-            <p data-translate
-               data-de="Willkommen auf meiner Profilseite! Hier findest du alles über meine Arbeit rund um künstliche Intelligenz, von Forschungsprojekten über Podcasts bis zu Open-Source-Software."
-               data-en="Welcome to my profile page! Here you can learn all about my work in artificial intelligence, from research projects and podcasts to open-source software."
-            >
-                Willkommen auf meiner Profilseite! Hier findest du alles über meine Arbeit rund um künstliche Intelligenz, von Forschungsprojekten über Podcasts bis zu Open-Source-Software.
-            </p>
+        <!-- Hero-Bereich mit neuer Klasse "neon" -->
+        <section id="hero" class="hero neon">
+            <div class="hero-content">
+                <img
+                    src="WolframRavenwolf.png"
+                    alt="Wolfram Ravenwolf"
+                    class="hero-logo"
+                />
+                <h1 data-translate
+                    data-de="Wolfram Ravenwolf"
+                    data-en="Wolfram Ravenwolf"
+                >
+                    Wolfram Ravenwolf
+                </h1>
+                <h2 data-translate
+                    data-de="AI Evangelist, KI-Ingenieur, Berater &amp; Forscher"
+                    data-en="AI Evangelist, Engineer, Consultant &amp; Researcher"
+                >
+                    AI Evangelist, KI-Ingenieur, Berater &amp; Forscher
+                </h2>
+                <p data-translate
+                   data-de="Willkommen auf meiner Profilseite! Hier erfährst du alles über meine Arbeit mit künstlicher Intelligenz. Von Forschungsprojekten über Open Source bis zum ThursdAI-Podcast."
+                   data-en="Welcome to my profile! Learn all about my work in AI, from research projects and open-source tools to the weekly ThursdAI podcast."
+                >
+                    Willkommen auf meiner Profilseite! Hier erfährst du alles über meine Arbeit mit künstlicher Intelligenz. Von Forschungsprojekten über Open Source bis zum ThursdAI-Podcast.
+                </p>
+
+                <!-- Call-to-Action -->
+                <a href="#about" class="hero-cta sass-button"
+                   data-translate
+                   data-de="Lass uns loslegen!"
+                   data-en="Let's get started!"
+                >
+                    Lass uns loslegen!
+                </a>
+            </div>
         </section>
 
         <!-- Über mich -->
-        <section id="about" style="margin-top: 3rem;">
-            <h2 data-translate
-                data-de="Wer ich bin"
-                data-en="Who I Am"
-            >Wer ich bin</h2>
+        <section id="about" class="reveal" style="margin-top: 4rem;">
+            <h2 data-translate data-de="Wer ich bin" data-en="Who I Am">Wer ich bin</h2>
             <p data-translate
-               data-de="Ich bin leidenschaftlicher KI-Ingenieur und Berater mit breitem Spektrum an Projekten und Veröffentlichungen. Als prominentes Mitglied der KI-Community bin ich international bekannt für meine Expertise zu großen Sprachmodellen und praktischen KI-Anwendungen."
-               data-en="I am a passionate AI engineer and consultant with a wide range of projects and publications. As a prominent member of the AI community, I am internationally recognized for my expertise in large language models and practical AI applications."
+               data-de="Wolfram Ravenwolf, AI Evangelist und KI-Ingenieur aus Deutschland – international tätig als Berater und Forscher rund um moderne KI-Technologien und Sprachmodelle. Als prominentes Mitglied der KI-Community bin ich für meine Expertise und Praxisnähe bekannt."
+               data-en="Wolfram Ravenwolf, an AI Evangelist and Engineer from Germany, operating internationally as an AI consultant and researcher. A prominent figure in the global AI community, recognized for my expertise in modern AI technologies and language models."
             >
-                Ich bin leidenschaftlicher KI-Ingenieur und Berater mit breitem Spektrum an Projekten und Veröffentlichungen. Als prominentes Mitglied der KI-Community bin ich international bekannt für meine Expertise zu großen Sprachmodellen und praktischen KI-Anwendungen.
+                Wolfram Ravenwolf, AI Evangelist und KI-Ingenieur aus Deutschland – international tätig als Berater und Forscher rund um moderne KI-Technologien und Sprachmodelle. Als prominentes Mitglied der KI-Community bin ich für meine Expertise und Praxisnähe bekannt.
             </p>
         </section>
 
         <!-- Expertise -->
-        <section id="work" style="margin-top: 3rem;">
+        <section id="work" class="reveal" style="margin-top: 4rem;">
             <h2 data-translate data-de="Was ich tue" data-en="What I Do">Was ich tue</h2>
             <ul>
-                <li data-translate data-de="Hauptberuflich AI Engineer, nebenberuflicher KI-Berater &amp; Forscher" data-en="Full-time AI Engineer, part-time consultant &amp; researcher">
-                    Hauptberuflich AI Engineer, nebenberuflicher KI-Berater & Forscher
+                <li data-translate
+                    data-de="Hauptberuflich AI-Ingenieur + Nebenberuflich/Freiberuflich KI-Berater &amp; Forscher"
+                    data-en="Full-time Professional AI Engineer + Part-time Freelance AI Consultant &amp; Researcher"
+                >
+                    Hauptberuflich AI-Ingenieur + Nebenberuflich/Freiberuflich KI-Berater &amp; Forscher
                 </li>
-                <li data-translate data-de="Autor von Artikeln, Tutorials und Testberichten rund um LLMs" data-en="Author of articles, tutorials, and reviews about LLMs">
-                    Autor von Artikeln, Tutorials und Testberichten rund um LLMs
+                <li data-translate
+                    data-de="Prominentes Mitglied der KI-Community, international bekannt und anerkannter KI-Experte"
+                    data-en="A prominent member of the AI community, internationally recognized AI expert"
+                >
+                    Prominentes Mitglied der KI-Community, international bekannt und anerkannter KI-Experte
                 </li>
-                <li data-translate data-de="Kommentator aktueller KI-News in sozialen Netzwerken" data-en="Commenting on current AI news in social media">
-                    Kommentator aktueller KI-News in sozialen Netzwerken (X, Reddit, Bluesky & Co.)
+                <li data-translate
+                    data-de="Autor von Artikeln (LLM-Reviews, Anleitungen, Tutorials), Bilder und Videos"
+                    data-en="Author of articles (LLM reviews, guides, tutorials), images and videos"
+                >
+                    Autor von Artikeln (LLM-Reviews, Anleitungen, Tutorials), Bilder und Videos
                 </li>
-                <li data-translate data-de="Co-Host im wöchentlichen ThursdAI-Podcast" data-en="Co-host of the weekly ThursdAI podcast">
-                    Co-Host im wöchentlichen ThursdAI-Podcast (X, Spotify, Apple Podcasts, YouTube)
+                <li data-translate
+                    data-de="Kommentiert KI-Nachrichten und -Neuigkeiten in sozialen Netzwerken (X, Reddit, Bluesky, etc.)"
+                    data-en="Commenting on AI news and updates in social media (X, Reddit, Bluesky, etc.)"
+                >
+                    Kommentiert KI-Nachrichten und -Neuigkeiten in sozialen Netzwerken (X, Reddit, Bluesky, etc.)
                 </li>
-                <li data-translate data-de="Open-Source-Entwickler (u.a. AI-Hotkeys) auf GitHub" data-en="Open-source developer (e.g. AI-Hotkeys) on GitHub">
-                    Open-Source-Software-Entwickler (u.a. AI-Hotkeys) auf GitHub
+                <li data-translate
+                    data-de="Co-Host im wöchentlichen ThursdAI-Podcast (Audio/Video auf X, Spotify, Apple Podcasts, YouTube)"
+                    data-en="Weekly co-host of the ThursdAI podcast (audio/video on X, Spotify, Apple Podcasts, YouTube)"
+                >
+                    Co-Host im wöchentlichen ThursdAI-Podcast (Audio/Video auf X, Spotify, Apple Podcasts, YouTube)
                 </li>
-                <li data-translate data-de="Veröffentlichung eigener KI-Modelle auf Hugging Face" data-en="Publishing own AI models on Hugging Face">
-                    Aktiv in der Entwicklung und Veröffentlichung eigener KI-Modelle auf Hugging Face
+                <li data-translate
+                    data-de="Entwickler der Open Source Software 'AI-Hotkeys' zur optimalen KI-Nutzung via Perplexity"
+                    data-en="Developer of the open-source 'AI-Hotkeys' software for optimal AI usage via Perplexity"
+                >
+                    Entwickler der Open Source Software 'AI-Hotkeys' zur optimalen KI-Nutzung via Perplexity
                 </li>
-                <li data-translate data-de="Regelmäßiger Teilnehmer an KI-Konferenzen" data-en="Regular participant at AI conferences">
-                    Regelmäßiger Teilnehmer an KI-Konferenzen und Veranstaltungen
+                <li data-translate
+                    data-de="Aktiv Mitwirkender bei diversen Open Source KI-Projekten auf GitHub"
+                    data-en="Actively contributing to various open-source AI projects on GitHub"
+                >
+                    Aktiv Mitwirkender bei diversen Open Source KI-Projekten auf GitHub
                 </li>
-                <li data-translate data-de="Beratung und Coaching für Unternehmen und Startups" data-en="Providing consulting and coaching for companies & startups">
-                    Beratungen und Coachings für Unternehmen & Startups
+                <li data-translate
+                    data-de="Regelmäßiger Teilnehmer an KI-Konferenzen und Veranstaltungen (z.B. AI Dev Events in Deutschland)"
+                    data-en="Frequent participant in AI conferences and events (e.g., AI Dev events in Germany)"
+                >
+                    Regelmäßiger Teilnehmer an KI-Konferenzen und Veranstaltungen (z.B. AI Dev Events in Deutschland)
+                </li>
+                <li data-translate
+                    data-de="KI-Berater und -Coach für Unternehmen und Startups"
+                    data-en="AI consultant and coach for companies and startups"
+                >
+                    KI-Berater und -Coach für Unternehmen und Startups
+                </li>
+                <li data-translate
+                    data-de="Engagiertes und respektiertes Mitglied der KI-Community, bekannt für technische Beiträge und die Förderung von KI-Technologien"
+                    data-en="Engaged and respected member of the AI community, known for technical contributions and AI technology advocacy"
+                >
+                    Engagiertes und respektiertes Mitglied der KI-Community, bekannt für technische Beiträge und die Förderung von KI-Technologien
                 </li>
             </ul>
         </section>
 
         <!-- Projekte & Präsenzen -->
-        <section id="projects" style="margin-top:3rem;">
+        <section id="projects" class="reveal" style="margin-top: 3rem;">
             <h2 data-translate data-de="Projekte &amp; Präsenzen" data-en="Projects &amp; Presence">Projekte &amp; Präsenzen</h2>
             <p data-translate
                data-de="Schau dir meine Beiträge, Tools und KI-Modelle an oder folge mir auf meinen bevorzugten Plattformen:"
@@ -137,50 +174,58 @@
             </p>
             <ul>
                 <li>
-                    <i class="fab fa-x-twitter"></i>
-                    <span data-translate data-de="X (ehem. Twitter):" data-en="X (formerly Twitter):">X (ehem. Twitter):</span>
-                    <a href="https://x.com/WolframRvnwlf" target="_blank">WolframRvnwlf</a>
+                    <a href="https://x.com/WolframRvnwlf" target="_blank">
+                        <i>𝕏</i>
+                        <span data-translate data-de="X (ehem. Twitter):" data-en="X (formerly Twitter):">X (ehem. Twitter):</span>
+                        <br><span class="username">WolframRvnwlf</span>
+                    </a>
                 </li>
                 <li>
-                    <i class="fas fa-globe"></i>
-                    <span data-translate data-de="Bluesky:" data-en="Bluesky:">Bluesky:</span>
-                    <a href="https://bsky.app/profile/wolfram.ravenwolf.ai" target="_blank">wolfram.ravenwolf.ai</a>
+                    <a href="https://bsky.app/profile/wolfram.ravenwolf.ai" target="_blank">
+                        <i class="fa-solid fa-square">🦋</i>
+                        <span data-translate data-de="Bluesky:" data-en="Bluesky:">Bluesky:</span>
+                        <br>wolfram.ravenwolf.ai
+                    </a>
                 </li>
                 <li>
-                    <i class="fab fa-github"></i>
-                    <span data-translate data-de="GitHub:" data-en="GitHub:">GitHub:</span>
-                    <a href="https://github.com/WolframRavenwolf" target="_blank">WolframRavenwolf</a>
+                    <a href="https://github.com/WolframRavenwolf" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span data-translate data-de="GitHub:" data-en="GitHub:">GitHub:</span>
+                        <br>WolframRavenwolf
+                    </a>
                 </li>
                 <li>
-                    <i class="fas fa-cloud"></i>
-                    <span data-translate data-de="Hugging Face:" data-en="Hugging Face:">Hugging Face:</span>
-                    <a href="https://huggingface.co/wolfram" target="_blank">wolfram</a>
+                    <a href="https://huggingface.co/wolfram" target="_blank">
+                        <i>🤗</i>
+                        <span data-translate data-de="Hugging Face:" data-en="Hugging Face:">Hugging Face:</span>
+                        <br>wolfram
+                    </a>
                 </li>
                 <li>
-                    <i class="fab fa-reddit"></i>
-                    <span data-translate data-de="Reddit:" data-en="Reddit:">Reddit:</span>
-                    <a href="https://www.reddit.com/user/WolframRavenwolf/submitted/" target="_blank">WolframRavenwolf</a>
+                    <a href="https://ko-fi.com/wolframravenwolf" target="_blank">
+                        <i>☕</i>
+                        <span data-translate data-de="Ko-fi:" data-en="Ko-fi:">Ko-fi:</span>
+                        <br>wolframravenwolf
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/user/WolframRavenwolf/submitted/" target="_blank">
+                        <i class="fab fa-reddit"></i>
+                        <span data-translate data-de="Reddit:" data-en="Reddit:">Reddit:</span>
+                        <br>WolframRavenwolf
+                    </a>
                 </li>
             </ul>
         </section>
 
         <!-- Kontakt -->
-        <section id="contact" style="margin-top:3rem;">
+        <section id="contact" class="reveal" style="margin-top: 3rem;">
             <h2 data-translate data-de="Kontakt" data-en="Contact">Kontakt</h2>
             <p data-translate
-               data-de="Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht. Schreib mir oder vernetze dich mit mir auf den sozialen Kanälen!"
-               data-en="Do you have questions, ideas, or need consulting? I'd love to hear from you. Send me an email or connect with me on social media!"
+               data-de="Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht! Am besten erreichst du mich über die oben genannten sozialen Netzwerke - dort bin ich regelmäßig aktiv und antworte zeitnah."
+               data-en="Got questions, ideas, or need consulting? I'd love to hear from you! The best way to reach me is through the social networks listed above - I'm regularly active there and respond promptly."
             >
-                Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht.
-                Schreib mir doch oder vernetze dich mit mir auf den sozialen Kanälen!
-            </p>
-            <p>
-                <a class="sass-button" href="mailto:contact@ravenwolf.ai" data-translate
-                   data-de="E-Mail senden"
-                   data-en="Send Email"
-                >
-                    E-Mail senden
-                </a>
+                Hast du Fragen, Ideen oder brauchst Beratung? Ich freue mich über deine Nachricht! Am besten erreichst du mich über die oben genannten sozialen Netzwerke - dort bin ich regelmäßig aktiv und antworte zeitnah.
             </p>
         </section>
     </main>
@@ -193,7 +238,5 @@
             © 2024 Wolfram Ravenwolf – KI-Expertise & Innovation
         </p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
